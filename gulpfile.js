@@ -20,8 +20,11 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('components', function() {
-  return gulp.src(['./src/bower_components/normalize-css/normalize.css'])
+  gulp.src(['./src/bower_components/normalize-css/normalize.css'])
   .pipe($.rename('_normalize.scss'))
+  .pipe(gulp.dest('./src/stylesheets'));
+  gulp.src(['./src/bower_components/bootstrap-datepicker/css/datepicker.css'])
+  .pipe($.rename('_datepicker.scss'))
   .pipe(gulp.dest('./src/stylesheets'));
 });
 
