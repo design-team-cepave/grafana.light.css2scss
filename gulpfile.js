@@ -18,6 +18,14 @@ gulp.task('browser-sync', function() {
   });
 });
 
+
+gulp.task('components', function() {
+  return gulp.src(['./src/bower_components/normalize-css/normalize.css'])
+  .pipe($.rename('_normalize.scss'))
+  .pipe(gulp.dest('./src/stylesheets'));
+});
+
+
 gulp.task('compass', function() {
   return gulp.src('./src/stylesheets/**/*.{scss,sass}')
     .pipe($.plumber())
@@ -74,7 +82,7 @@ gulp.task('templates', function() {
 
 
 
-gulp.task('build', ['compass', 'js', 'templates', 'images']);
+gulp.task('build', ['components', 'compass', 'js', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/**/*.{scss,sass}',['compass', reload]);

@@ -4,5 +4,7 @@
   "dependencies": {
     "underscore": "*"
     },
-  "devDependencies": {  }
+  "devDependencies": {
+    "normalize-css": "1.0.1"
+  }
 }
