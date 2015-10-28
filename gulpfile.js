@@ -45,8 +45,9 @@ gulp.task('compass', function() {
   return gulp.src('./src/stylesheets/**/*.{scss,sass}')
     .pipe($.plumber())
     .pipe($.compass({
-      css: 'dist/stylesheets',
-      sass: 'src/stylesheets'
+      css:   'dist/stylesheets',
+      sass:  'src/stylesheets',
+      style: 'expanded'
     }))
     .pipe(gulp.dest('dist/stylesheets'));
 });
