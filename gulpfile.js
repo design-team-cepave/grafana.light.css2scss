@@ -29,6 +29,15 @@ gulp.task('components', function() {
   gulp.src(['./src/bower_components/bootstrap-timepicker/compiled/timepicker.css'])
   .pipe($.rename('_timepicker.scss'))
   .pipe(gulp.dest('./src/stylesheets'));
+  gulp.src(['./src/bower_components/spectrum/spectrum.css'])
+  .pipe($.rename('_spectrum.scss'))
+  .pipe(gulp.dest('./src/stylesheets'));
+  gulp.src(['./src/bower_components/bootstrap/docs/assets/css/bootstrap.css'])
+  .pipe($.rename('_bootstrap.scss'))
+  .pipe(gulp.dest('./src/stylesheets'));
+  gulp.src(['./src/bower_components/fontawesome/css/font-awesome.css'])
+  .pipe($.rename('_font-awesome.scss'))
+  .pipe(gulp.dest('./src/stylesheets'));
 });
 
 
