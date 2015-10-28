@@ -98,7 +98,7 @@ gulp.task('templates', function() {
 
 
 
-gulp.task('build', ['components', 'compass', 'js', 'templates', 'images']);
+gulp.task('build', ['compass', 'js', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/**/*.{scss,sass}',['compass', reload]);
