@@ -2,3 +2,4 @@ node_modules
 dist
 .sass-cache
 src/bower_components
+src/stylesheets/vendor
