@@ -8,6 +8,12 @@ install , run:
 $ npm install && bower install
 ```
 
+搬移 vendor components, run:
+
+```
+$ gulp serve components
+```
+
 啟動 local server:
 
 ```
