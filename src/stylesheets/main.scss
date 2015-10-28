@@ -1,33 +1,40 @@
 @import 'compass';
 
-// include 1
+// include 1 normalize 1.0.1
 @import 'normalize';
-// include 2
+// include 2 datepicker 1.0.0
 @import 'datepicker';
-// include 3
+// include 3 timepicker 0.2.0
 @import 'timepicker';
-// include 4 spectrum-colorpicker
+// include 4 colorpicker 1.3.1
+@import 'spectrum'; //
 // include 5 bootstrap 2.3.2
+@import 'bootstrap';
+
+// g custome
+@import '_partials/grafana_01';
+@import '_partials/grafana_02';
+
 // Font Awesome 4.2.0
+@import 'font-awesome';
 
-
-body, * {
-  font-family: sans-serif;
-  background: #283772;
-}
-.container {
-  width: 520px;
-  height: auto;
-  border: 1px solid #ccc;
-  background: #fff;
-  * {
-    background: #fff;
-  }
-  box-shadow: 1px 1px 1px black;
-  border-radius: 3px;
-  margin: 0 auto;
-  padding: 35px;
-  h1 {
-    text-align: center;
-  }
-}
+// body, * {
+//   font-family: sans-serif;
+//   background: #283772;
+// }
+// .container {
+//   width: 520px;
+//   height: auto;
+//   border: 1px solid #ccc;
+//   background: #fff;
+//   * {
+//     background: #fff;
+//   }
+//   box-shadow: 1px 1px 1px black;
+//   border-radius: 3px;
+//   margin: 0 auto;
+//   padding: 35px;
+//   h1 {
+//     text-align: center;
+//   }
+// }
