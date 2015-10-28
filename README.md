@@ -11,7 +11,7 @@ $ npm install && bower install
 搬移 vendor components, run:
 
 ```
-$ gulp serve components
+$ gulp components
 ```
 
 啟動 local server:
