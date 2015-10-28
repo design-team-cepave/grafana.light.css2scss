@@ -8,6 +8,36 @@ var gulp        = require('gulp'),
     del         = require('del'),
     argv        = require('yargs').argv;
 
+var baseDir = './src/bower_components/';
+
+var source = {
+  style: {
+    normalize: {
+      file: [ baseDir + 'normalize-css/normalize.css' ]
+    },
+    datepicker: {
+      file: [ baseDir + 'bootstrap-datepicker/css/datepicker.css' ]
+    },
+    timepicker: {
+      file: [ baseDir + 'bootstrap-timepicker/compiled/timepicker.css' ]
+    },
+    spectrum: {
+      file: [ baseDir + 'spectrum/spectrum.css' ]
+    },
+    bootstrap: {
+      file: [ baseDir + 'bootstrap/docs/assets/css/bootstrap.css' ]
+    },
+    fontAwesome: {
+      file: [ baseDir + 'fontawesome/css/font-awesome.css' ]
+    }
+  }
+};
+
+var vendor = {
+  dest: './src/stylesheets/vendor'
+}
+
+
 gulp.task('browser-sync', function() {
   browserSync({
     open: !!argv.open,
@@ -20,24 +50,24 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('components', function() {
-  gulp.src(['./src/bower_components/normalize-css/normalize.css'])
+  gulp.src(source.style.normalize.file)
   .pipe($.rename('_normalize.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
-  gulp.src(['./src/bower_components/bootstrap-datepicker/css/datepicker.css'])
+  .pipe(gulp.dest(vendor.dest));
+  gulp.src(source.style.datepicker.file)
   .pipe($.rename('_datepicker.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
-  gulp.src(['./src/bower_components/bootstrap-timepicker/compiled/timepicker.css'])
+  .pipe(gulp.dest(vendor.dest));
+  gulp.src(source.style.timepicker.file)
   .pipe($.rename('_timepicker.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
-  gulp.src(['./src/bower_components/spectrum/spectrum.css'])
+  .pipe(gulp.dest(vendor.dest));
+  gulp.src(source.style.spectrum.file)
   .pipe($.rename('_spectrum.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
-  gulp.src(['./src/bower_components/bootstrap/docs/assets/css/bootstrap.css'])
+  .pipe(gulp.dest(vendor.dest));
+  gulp.src(source.style.bootstrap.file)
   .pipe($.rename('_bootstrap.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
-  gulp.src(['./src/bower_components/fontawesome/css/font-awesome.css'])
+  .pipe(gulp.dest(vendor.dest));
+  gulp.src(source.style.fontAwesome.file)
   .pipe($.rename('_font-awesome.scss'))
-  .pipe(gulp.dest('./src/stylesheets'));
+  .pipe(gulp.dest(vendor.dest));
 });
 
 
